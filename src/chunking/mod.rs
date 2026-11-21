@@ -5,7 +5,7 @@ const BYTE_NO_MORE_CHUNKS: u8 = 0x01;
 const BYTE_MORE_CHUNKS: u8 = 0x02;
 
 /// Max size of the data *payload* (leaves room for header)
-pub const CHUNK_SIZE: usize = 500_000; // ~512k limit, play it safe
+pub const CHUNK_SIZE: usize = 65_519; // Noise max (65,535) minus 16-byte AES-GCM tag
 
 /// 1 byte telling if we more chunks are coming or not
 const HEADER_SIZE: usize = 1;
